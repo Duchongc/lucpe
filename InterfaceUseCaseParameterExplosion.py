@@ -11,13 +11,12 @@ class Lucpe(object):
 
     def init(self, url, method, headers, data, fission)-> str:
         """
-        接口的参数和用例的个数是一致的，因为我是循环遍历的，不是按照key
-        :param data: 正常的Json格式，且是{}包括的参数，如果value是数组，只能遍历2级，如
-        {"key":[{"k1": "value", "k2":"v2"}, {"k1": "value", "k2":"v2"}]}
-
-        :param fission: fission list的长度最少为1，格式如下,有几个参数，就有几个[]
-        [[1,"a",""]]
-        [[1,"a",""], [1,"a",""]]
+        :param url: url
+        :param method: get or post
+        :param headers: headers
+        :param data: params
+        :param fission: rules
+        :return:
         """
         if url:
             self.url = url
@@ -82,7 +81,7 @@ class Lucpe(object):
 
 if __name__ == "__main__":
     l = Lucpe()
-    l.init("/backend-api/employee_order/yw-complaints/get-transfer-info", "POST",
-           "{}", "{'complaint_type': '', 'city_id': '', 'order_id': ''}", [["1","2","3"],["4","5","6"], ["7","8","9"]])
+    l.init("/backend-api/get-transfer-info", "POST",
+           "{}", "{'complaint_type': '', 'city_id': '', 'order_id': ''}", [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]])
     result = l.get_interface_parameter()
     print(result)

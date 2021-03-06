@@ -1,4 +1,4 @@
-# InterfaceUseCaseParameterExplosion
+# InterfaceUseCaseParameterExplosion 接口参数用例爆炸
 ## init  
 ###  url 接口url
 ###  method 接口请求方式
